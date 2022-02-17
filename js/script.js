@@ -1,5 +1,5 @@
                                     /* functions */
-
+// ------------------------------------------------------------------------------------------
 // function-one-->which takes id and returns value. 
 function inputIdToValue(InputId){
     if(InputId=='income_input'){
@@ -36,8 +36,8 @@ else{
     totalblncfield.innerText = totblnc ;
 }
 }
-                                    /* end functions */
-
+                                    /* end of functions */
+// ----------------------------------------------------------------------------------------
 // Error management
 const input_field_all= document.getElementsByClassName('block');
 for(let classx of input_field_all ){
@@ -59,7 +59,7 @@ for(let classx of input_field_all ){
         }
     })
 }
-
+// -----------------------------------------------------------------------------------------
                                         /* event handler */
 // event one
 document.getElementById('calculate_btn').addEventListener('click',function (){
@@ -111,3 +111,4 @@ document.getElementById('save_btn').addEventListener('click',function(){
 
     }
 })
+// ------------------------------------------------------------------------------------------
