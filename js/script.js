@@ -1,4 +1,7 @@
-function AllMighty(InputId){
+                                    /* functions */
+
+// function-one-->which takes id and returns value. 
+function inputIdToValue(InputId){
     if(InputId=='income_input'){
     const incomeField = document.getElementById(InputId).value;
     return incomeField ;
@@ -17,7 +20,7 @@ function AllMighty(InputId){
     }
    
 }
-
+// function-two-> which will set the returned value with some validation.
 function setBalance(totEx , totblnc){
 const totalExpfield = document.getElementById('total_expence');
 const totalblncfield = document.getElementById('total_balance');
@@ -33,7 +36,7 @@ else{
     totalblncfield.innerText = totblnc ;
 }
 }
-
+                                    /* end functions */
 
 // Error management
 const input_field_all= document.getElementsByClassName('block');
@@ -57,14 +60,15 @@ for(let classx of input_field_all ){
     })
 }
 
-
+                                        /* event handler */
 // event one
 document.getElementById('calculate_btn').addEventListener('click',function (){
-    const income = parseInt(AllMighty('income_input'));
-    const totalExpenses = parseInt(AllMighty());
+    const income = parseInt(inputIdToValue('income_input'));
+    const totalExpenses = parseInt(inputIdToValue());
     if(income>totalExpenses){
     const balance = income - totalExpenses ;
     setBalance(totalExpenses,balance);
+    document.getElementById('show_error2').style.display='none';
     }
     else{
         document.getElementById('show_error2').style.display='block';
@@ -75,8 +79,8 @@ document.getElementById('calculate_btn').addEventListener('click',function (){
 })
 // event two
 document.getElementById('save_btn').addEventListener('click',function(){
-  const income = parseInt(AllMighty('income_input'));
-  const parcrntField = parseFloat(AllMighty('save_field'))/100;
+  const income = parseInt(inputIdToValue('income_input'));
+  const parcrntField = parseFloat(inputIdToValue('save_field'))/100;
   const totalbalance = parseInt(document.getElementById('total_balance').innerText);
   const saving = document.getElementById('saving_balance');
   const remaining =document.getElementById('remaining_balance');
@@ -92,7 +96,7 @@ document.getElementById('save_btn').addEventListener('click',function(){
   
 })
 
-// event three
+// event three-> main perpose of this event is to handle error in saving field.
 
 document.getElementById('save_btn').addEventListener('click',function(){
     const balance = parseInt(document.getElementById('total_balance').innerText);
@@ -100,6 +104,10 @@ document.getElementById('save_btn').addEventListener('click',function(){
     if(balance<savingTarget){
         document.getElementById('show_error').style.display='block';
         document.getElementById('remaining_balance').innerText=0;
+
+    }
+    else{
+        document.getElementById('show_error').style.display='none';
 
     }
 })
