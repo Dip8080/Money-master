@@ -62,11 +62,15 @@ for(let classx of input_field_all ){
 document.getElementById('calculate_btn').addEventListener('click',function (){
     const income = parseInt(AllMighty('income_input'));
     const totalExpenses = parseInt(AllMighty());
-  
+    if(income>totalExpenses){
     const balance = income - totalExpenses ;
-    console.log(totalExpenses);
-    console.log(balance);
-    setBalance(totalExpenses,balance); 
+    setBalance(totalExpenses,balance);
+    }
+    else{
+        document.getElementById('show_error2').style.display='block';
+        setBalance(totalExpenses,0);
+        
+    } 
   
 })
 // event two
@@ -75,8 +79,36 @@ document.getElementById('save_btn').addEventListener('click',function(){
   const parcrntField = parseFloat(AllMighty('save_field'))/100;
   const totalbalance = parseInt(document.getElementById('total_balance').innerText);
   const saving = document.getElementById('saving_balance');
-  saving.innerText =income * parcrntField; 
-  document.getElementById('remaining_balance').innerText =totalbalance- parseInt(saving.innerText);
-
+  const remaining =document.getElementById('remaining_balance');
+  if (isNaN(saving.innerText) && isNaN(remaining.innerText)){
+  alert('Enter ur saving parcent')  
+  saving.innerText =0; 
+  remaining.innerText =0;
+  }
+  else{
+    saving.innerText =income * parcrntField; 
+    remaining.innerText =totalbalance- parseInt(saving.innerText);
+  }
   
 })
+
+// event three
+
+document.getElementById('save_btn').addEventListener('click',function(){
+    const balance = parseInt(document.getElementById('total_balance').innerText);
+    const savingTarget = parseInt(document.getElementById('saving_balance').innerText);
+    if(balance<savingTarget){
+        document.getElementById('show_error').style.display='block';
+        document.getElementById('remaining_balance').innerText=0;
+
+    }
+})
+/* document.getElementById('calculate_btn').addEventListener('click',function(){
+    const income = parseInt(document.getElementById('income_input').value);
+    const totalExp = parseInt(document.getElementById('total_expence').innerText);
+    if(balance<savingTarget){
+        document.getElementById('show_error').style.display='block';
+        document.getElementById('remaining_balance').innerText=0;
+
+    }
+}) */
