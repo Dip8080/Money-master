@@ -9,16 +9,17 @@
 
 </head>
 <body class="">
-<header class="text-4xl  text-center bg-red-500 p-8 rounded shadow">
-        <h1 >Money Tracker</h1>
+<header class="text-4xl  text-center bg-red-500 p-8 rounded shadow sm:w-100 ">
+        <h1 style="color: rgba(239, 242, 245, 0.979);">Wallet Tracker</h1>
 </header>
-<main class="grid grid-cols-2  gap-6 my-5">
-        <div class=" bg-contain h-3 ">
+<main class="container  xs:grid-cols-1  mt-3">
+    <div class="grid grid-rows-2 md:grid-cols-2 lg:grid-cols-2 gap-3 ">
+        <div class=" h-3 sm:h-14 sm:w-100 shadow">
             <img src="/image/moneyimg.jpg" alt="MoneyVSfriend">
         </div>
-        <div class="bg-red-500 p-9">
-                <div class="py-5">
-                    <h1 class="text-center mb-2 text-2xl">Income<h1>
+        <div class="bg-red-500 p-7  shadow ">
+                <div class="py-1">
+                    <h1 class="text-center mb-2 text-2xl ">Income<h1>
                     <span>income:</span> <input id="income_input"  class="block border my-1 rounded" type="text" value="0">
                 </div>
                 <div>
@@ -53,8 +54,9 @@
                        </div>
                 </div>
         </div>
+    </div>
 </main>
-<footer>
+<footer class="h-14 bg-green-300">
 
 </footer>
 

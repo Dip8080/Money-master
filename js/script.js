@@ -1,8 +1,9 @@
 function AllMighty(InputId){
     if(InputId=='income_input'){
     const incomeField = document.getElementById(InputId).value;
+    console.log(typeof(incomeField))
+    console.log(incomeField)
     return incomeField ;
-   
     }
     else if(InputId=='save_field'){
     const incomeField = document.getElementById(InputId).value;
@@ -28,10 +29,13 @@ totalblncfield.innerText = totblnc ;
 // Error management
 const input_field_all= document.getElementsByClassName('block');
 for(let classx of input_field_all ){
+    classx.addEventListener('click',function(event){
+        event.target.value ='';
+    })
     classx.addEventListener('keyup',function(event){
         const typedKey = event.target.value;
         if(typedKey=="-"){
-            alert('please enter positive number');
+            alert('click "OK" .then enter positive number');
             event.target.style.backgroundColor ="#C1C1C1"
         }
         else{
@@ -44,6 +48,7 @@ for(let classx of input_field_all ){
 // event one
 document.getElementById('calculate_btn').addEventListener('click',function (){
   const income = parseInt(AllMighty('income_input'));
+  console.log(typeof(income));
   const totalExpenses = parseInt(AllMighty());
   const balance = income - totalExpenses ;
   setBalance(totalExpenses,balance);
