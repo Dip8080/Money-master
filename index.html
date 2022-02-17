@@ -8,25 +8,25 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
-<body class="">
+<body class="bg-green-300">
 <header class="text-4xl  text-center bg-red-500 p-8 rounded shadow ">
         <h1 style="color: white">Wallet Tracker</h1>
 </header>
 <main class="container  xs:grid-cols-1  mt-3">
     <div class="grid grid-rows-2 md:grid-cols-2 lg:grid-cols-2 gap-3 ">
-        <div class=" shadow">
+        <div class=" ">
             <img style="height: 858px;" src="/image/moneyimg.jpg" alt="MoneyVSfriend">
         </div>
         <div class="bg-red-500 p-7  shadow ">
                 <div class="py-1">
-                    <h1 class="text-center mb-2 text-2xl text-emerald-100">Income<h1>
-                    <span>income:</span> <input id="income_input"  class="block border my-1 rounded" type="text" value="0">
+                    <h1 class=" mb-2 text-2xl text-emerald-100">Income<h1>
+                    <span>income:</span> <input id="income_input"  class="block border my-1 rounded bg-green-300" type="text" value="0">
                 </div>
                 <div>
-                    <h2 class="text-center mb-2 text-2xl text-emerald-100">Expenses<h2>
-                    <span>Cloth:</span> <input id="expence_input1"  class="block border my-1 rounded" type="text" value="0"><br>
-                    <span>Rent:</span> <input id="expence_input2" class="block border my-1 rounded" type="text" value="0"><br>
-                    <span>food:</span> <input id="expence_input3" class="block border my-1 rounded" type="text" value="0">
+                    <h2 class=" mb-2 text-2xl text-emerald-100">Expenses<h2>
+                    <span>Cloth:</span> <input id="expence_input1"  class="bg-green-300 block border my-1 rounded" type="text" value="0"><br>
+                    <span>Rent:</span> <input id="expence_input2" class="block border my-1 rounded bg-green-300" type="text" value="0"><br>
+                    <span>food:</span> <input id="expence_input3" class="block border my-1 rounded bg-green-300" type="text" value="0">
                     <button id="calculate_btn" class="rounded-md  bg-green-400 p-3 text-1xl mt-3">Calculate</button>
                 </div>               
                 
@@ -36,12 +36,11 @@
                     <h2 class=" mb-2 text-2xl">Balance: <span id="total_balance">0</span> </h2>
                 </div>
                 <div>
-                    <div class="flex mt-5  py-4">
-                        <div class="flex-none w-16 h-14">
-                         <h5 class="text-2xl"> save :</h5>
-                        </div>
+                    <h5 class="text-2xl text-emerald-100"> save :</h5>
+                    <div class="flex mt-1  py-4">
+                       
                         <div class="flex-initial w-64">
-                       <input id="save_field" type="text" class="block border my-1 rounded">
+                       <input id="save_field" type="text" class="bg-green-300 block border my-1 rounded">
                         </div>
                         <div class="flex-initial w-10">
                           <h1 class="mb-1text-1xl w-32">%</h1>

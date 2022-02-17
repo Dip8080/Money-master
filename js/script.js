@@ -103,12 +103,3 @@ document.getElementById('save_btn').addEventListener('click',function(){
 
     }
 })
-/* document.getElementById('calculate_btn').addEventListener('click',function(){
-    const income = parseInt(document.getElementById('income_input').value);
-    const totalExp = parseInt(document.getElementById('total_expence').innerText);
-    if(balance<savingTarget){
-        document.getElementById('show_error').style.display='block';
-        document.getElementById('remaining_balance').innerText=0;
-
-    }
-}) */
